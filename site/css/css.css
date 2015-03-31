@@ -1,15 +1,62 @@
 #Header {
-    color: black;
-    background-color: whitesmoke;
+    background-color: black;
     width: 200px;
     height: 100px;
     float: left;
+    color: whitesmoke;
 }
 
 #ButtonRelay {
     float: left;
-    background-color: whitesmoke;
+    background-color: black;
     width: 1025px;
     height: 100px;
     margin-left:  ;
 }
+
+#button3 {
+    background-color: black;
+    float: left;
+    border-radius: 10px;
+    height: 30px;
+    width: 70px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+}
+
+#button4 {
+    background-color: black;
+    float: left;
+    border-radius: black 10px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+}
+
+#button5 {
+    background-color: black;
+    float: left;
+    border-radius: 10px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+}
+
+#button1 {
+    background-color: black;
+    float: left;
+    border-radius: 10px;
+    height: 30px;
+    width: 70px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
