@@ -20,7 +20,7 @@
     float: left;
     border-radius: 10px;
     height: 30px;
-    width: 80px;
+    width: 100px;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -32,7 +32,7 @@
     float: left;
     border-radius: 10px;
     height: 30px;
-    width: 80px;
+    width: 100px;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -44,7 +44,7 @@
     float: left;
     border-radius: 10px;
     height: 30px;
-    width: 80px;
+    width: 100px;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -56,10 +56,13 @@
     float: left;
     border-radius: 10px;
     height: 30px;
-    width: 80px;
+    width: 100px;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-right: 5px;
     margin-left: 5px;
 }
+
+a:link{color:ghostwhite;}
+a:visited{color:ghostwhite;}
