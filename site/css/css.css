@@ -1,7 +1,7 @@
 #Header {
-    background-color: black;
     width: 200px;
     height: 100px;
+    background-color: darkgrey;
     float: left;
     color: whitesmoke;
 }
@@ -15,7 +15,7 @@
 }
 
 #button3 {
-    background-color: black;
+    background-color: darkgrey;
     float: left;
     border-radius: 10px;
     height: 30px;
@@ -27,7 +27,7 @@
 }
 
 #button4 {
-    background-color: black;
+    background-color: darkgrey;
     float: left;
     border-radius: black 10px;
     height: 30px;
@@ -39,7 +39,7 @@
 }
 
 #button5 {
-    background-color: black;
+    background-color: darkgrey;
     float: left;
     border-radius: 10px;
     height: 30px;
@@ -51,7 +51,7 @@
 }
 
 #button1 {
-    background-color: black;
+    background-color: darkgrey;
     float: left;
     border-radius: 10px;
     height: 30px;
