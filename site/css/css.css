@@ -96,5 +96,19 @@ body {
 }
 
 #landskap {
-    height: ;
+    height: 500px;
+    width: 550px;
+    float: left;
+    background-image: url("");
+    background-color: aqua;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#settingpic {
+    background-color: azure;
+    width: 500px;
+    margin: 30px;
+    height: 500px;
 }
