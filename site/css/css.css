@@ -109,6 +109,7 @@ body {
 #settingpic {
     background-color: azure;
     width: 500px;
-    margin: 30px;
-    height: 500px;
+    margin: 25px;
+    height: 450px;
+    background-image: url("../img/AlanTheRaindeer.jpg");
 }
