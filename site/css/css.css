@@ -8,12 +8,75 @@
 }
 
 #buttonrelay {
-    background-color: azure;
     float: right;
     height: 97.2%;
     width: 50%;
     top: 136px;
+    margin-top: 25px;
+}
 
+.menu-wrap {
+    width:100%;
+    box-shadow:0px 1px 3px rgba(201, 95, 30, 0.20);
+    background: #c95f1e;
+}
+
+.menu {
+    width:1000px;
+    margin:0px auto;
+}
+
+.menu li {
+    margin:0px;
+    list-style:none;
+    background-color: darkgrey;
+}
+
+.menu a {
+    transition:all linear 0.15s;
+    color: white;
+}
+
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration:none;
+    color: azure;
+}
+
+.menu .arrow {
+    font-size:11px;
+    line-height:0%;
+}
+
+.menu > ul > li {
+    float:left;
+    display:inline-block;
+    position:relative;
+    font-size:19px;
+}
+
+.menu > ul > li > a {
+    padding:10px 40px;
+    display:inline-block;
+    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
+}
+
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background: black;
+}
+
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+
+.sub-menu li {
+    display:block;
+    font-size:16px;
+}
+
+.sub-menu li a {
+    padding:10px 30px;
+    display:block;
 }
 
 #nyheter {
@@ -76,7 +139,7 @@ body {
     height: 200px;
     margin-top: 20px;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 100px;
     float: left;
 }
 
@@ -89,66 +152,37 @@ body {
     float: left;
 }
 
-.menu-wrap {
-    width:100%;
-    box-shadow:0px 1px 3px rgba(201, 95, 30, 0.20);
-    background: #c95f1e;
+#teachinfo1 {
+    width: 250px;
+    height: 160px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
-.menu {
-    width:1000px;
-    margin:0px auto;
-}
-
-.menu li {
-    margin:0px;
-    list-style:none;
+#Teacher2 {
     background-color: darkgrey;
+    width: 450px;
+    height: 200px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 75px;
+    float: left;
 }
 
-.menu a {
-    transition:all linear 0.15s;
-    color: ghostwhite;
+#teachpic2 {
+    background-color: azure;
+    width: 140px;
+    height: 160px;
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left;
 }
 
-.menu li:hover > a, .menu .current-item > a {
-    text-decoration:none;
-    color: azure;
-}
-
-.menu .arrow {
-    font-size:11px;
-    line-height:0%;
-}
-
-.menu > ul > li {
-    float:left;
-    display:inline-block;
-    position:relative;
-    font-size:19px;
-}
-
-.menu > ul > li > a {
-    padding:10px 40px;
-    display:inline-block;
-    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
-}
-
-.menu > ul > li:hover > a, .menu > ul > .current-item > a {
-    background: black;
-}
-
-.menu li:hover .sub-menu {
-    z-index:1;
-    opacity:1;
-}
-
-.sub-menu li {
-    display:block;
-    font-size:16px;
-}
-
-.sub-menu li a {
-    padding:10px 30px;
-    display:block;
+#teachinfo2 {
+    width: 250px;
+    height: 160px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
 }
