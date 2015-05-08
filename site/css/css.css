@@ -11,62 +11,9 @@
     background-color: azure;
     float: right;
     height: 97.2%;
-    width: 33.7%;
+    width: 50%;
     top: 136px;
 
-}
-
-#button3 {
-    background-color: darkgrey;
-    float: left;
-    border-radius: 10px;
-    height: 30px;
-    width: 100px;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: 5px;
-    margin-top: 45px;
-}
-
-#button4 {
-    background-color: darkgrey;
-    float: left;
-    border-radius: 10px;
-    height: 30px;
-    width: 100px;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: 5px;
-    margin-top: 45px;
-}
-
-#button5 {
-    background-color: darkgrey;
-    float: left;
-    border-radius: 10px;
-    height: 30px;
-    width: 100px;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: 5px;
-    margin-top: 45px;
-}
-
-#button1 {
-    background-color: darkgrey;
-    float: left;
-    border-radius: 10px;
-    height: 30px;
-    width: 100px;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-top: 45px;
 }
 
 #nyheter {
@@ -123,12 +70,85 @@ body {
     margin-right: 30px;
 }
 
-#teachpic1 {
+#Teacher1 {
     background-color: darkgrey;
-    width: 50%;
-    height: 90%;
+    width: 450px;
+    height: 200px;
     margin-top: 20px;
     margin-right: 20px;
     margin-left: 20px;
     float: left;
+}
+
+#teachpic1 {
+    background-color: azure;
+    width: 140px;
+    height: 160px;
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left;
+}
+
+.menu-wrap {
+    width:100%;
+    box-shadow:0px 1px 3px rgba(201, 95, 30, 0.20);
+    background: #c95f1e;
+}
+
+.menu {
+    width:1000px;
+    margin:0px auto;
+}
+
+.menu li {
+    margin:0px;
+    list-style:none;
+    background-color: darkgrey;
+}
+
+.menu a {
+    transition:all linear 0.15s;
+    color: ghostwhite;
+}
+
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration:none;
+    color: azure;
+}
+
+.menu .arrow {
+    font-size:11px;
+    line-height:0%;
+}
+
+.menu > ul > li {
+    float:left;
+    display:inline-block;
+    position:relative;
+    font-size:19px;
+}
+
+.menu > ul > li > a {
+    padding:10px 40px;
+    display:inline-block;
+    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
+}
+
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background: black;
+}
+
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+
+.sub-menu li {
+    display:block;
+    font-size:16px;
+}
+
+.sub-menu li a {
+    padding:10px 30px;
+    display:block;
 }
