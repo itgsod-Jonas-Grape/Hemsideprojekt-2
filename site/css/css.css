@@ -186,3 +186,34 @@ body {
     margin-right: 20px;
     margin-top: 20px;
 }
+
+#skolinfo {
+    background-color: azure;
+    float: left;
+    width: 45%;
+    height: 700px;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#info1 {
+    margin: 30px;
+}
+
+#map-canvas {
+    height: 500px;
+    width: 550px;
+    float: left;
+    background-color: azure;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#map {
+    background-color: azure;
+    width: 500px;
+    margin: 25px;
+    height: 450px;
+}

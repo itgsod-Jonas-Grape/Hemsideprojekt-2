@@ -42,6 +42,135 @@
 
 </div>
 
+<div id="skolinfo">
+    <div id="info1">
+        <h1>Om Oss</h1>
+        <p>Bacon ipsum dolor amet meatloaf sirloin drumstick, capicola swine flank frankfurter shankle pork belly
+            kielbasa sausage turkey bresaola spare ribs. Sirloin ham porchetta turducken pastrami frankfurter. Tongue
+            pork belly hamburger brisket picanha rump, porchetta sausage pancetta corned beef ham hock capicola. Pig
+            short ribs spare ribs meatloaf, cupim ham pork chop capicola biltong.<br/><br/>
+
+            Sausage pancetta jerky, rump turkey swine tail frankfurter cow pork beef bacon alcatra. Doner ribeye
+            pastrami tongue ball tip short ribs jowl swine kevin porchetta sausage prosciutto fatback. Pork chop beef
+            andouille, pork brisket spare ribs pastrami hamburger pork loin sirloin biltong rump ham corned beef. Rump
+            short ribs cupim frankfurter picanha kevin.<br/><br/>
+
+            Beef ribs tenderloin doner, salami short loin andouille kielbasa sausage ham hock jerky meatball chicken
+            ball tip cupim brisket. Brisket shoulder fatback, pork beef ribs cow chicken biltong short loin. Cupim
+            andouille pork capicola porchetta, leberkas ham hock. Shankle boudin turkey pork loin corned beef pig, cupim
+            jowl brisket drumstick ground round.<br/><br/>
+
+            Sirloin jowl pastrami pork belly porchetta jerky t-bone corned beef. Jowl porchetta shoulder pork loin
+            biltong. Tail shank tongue picanha flank rump tenderloin boudin pork porchetta capicola. Bresaola pork shank
+            short ribs strip steak venison jerky. Sausage leberkas andouille, prosciutto fatback bresaola tail ball tip
+            pork. Jerky kielbasa swine meatball ribeye, cow sausage.<br/><br/></p>
+    </div>
+</div>
+
+<div id="map-canvas">
+    <div id="map">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+        <script>
+            var map;
+            var TILE_SIZE = 256;
+            var svalbard = new google.maps.LatLng(78,18);
+
+            function bound(value, opt_min, opt_max) {
+                if (opt_min != null) value = Math.max(value, opt_min);
+                if (opt_max != null) value = Math.min(value, opt_max);
+                return value;
+            }
+
+            function degreesToRadians(deg) {
+                return deg * (Math.PI / 180);
+            }
+
+            function radiansToDegrees(rad) {
+                return rad / (Math.PI / 180);
+            }
+
+            /** @constructor */
+            function MercatorProjection() {
+                this.pixelOrigin_ = new google.maps.Point(TILE_SIZE / 2,
+                        TILE_SIZE / 2);
+                this.pixelsPerLonDegree_ = TILE_SIZE / 360;
+                this.pixelsPerLonRadian_ = TILE_SIZE / (2 * Math.PI);
+            }
+
+            MercatorProjection.prototype.fromLatLngToPoint = function(latLng,
+                                                                      opt_point) {
+                var me = this;
+                var point = opt_point || new google.maps.Point(0, 0);
+                var origin = me.pixelOrigin_;
+
+                point.x = origin.x + latLng.lng() * me.pixelsPerLonDegree_;
+
+                // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+                // about a third of a tile past the edge of the world tile.
+                var siny = bound(Math.sin(degreesToRadians(latLng.lat())), -0.9999,
+                        0.9999);
+                point.y = origin.y + 0.5 * Math.log((1 + siny) / (1 - siny)) *
+                        -me.pixelsPerLonRadian_;
+                return point;
+            };
+
+            MercatorProjection.prototype.fromPointToLatLng = function(point) {
+                var me = this;
+                var origin = me.pixelOrigin_;
+                var lng = (point.x - origin.x) / me.pixelsPerLonDegree_;
+                var latRadians = (point.y - origin.y) / -me.pixelsPerLonRadian_;
+                var lat = radiansToDegrees(2 * Math.atan(Math.exp(latRadians)) -
+                        Math.PI / 2);
+                return new google.maps.LatLng(lat, lng);
+            };
+
+            function createInfoWindowContent() {
+                var numTiles = 1 << map.getZoom();
+                var projection = new MercatorProjection();
+                var worldCoordinate = projection.fromLatLngToPoint(svalbard);
+                var pixelCoordinate = new google.maps.Point(
+                        worldCoordinate.x * numTiles,
+                        worldCoordinate.y * numTiles);
+                var tileCoordinate = new google.maps.Point(
+                        Math.floor(pixelCoordinate.x / TILE_SIZE),
+                        Math.floor(pixelCoordinate.y / TILE_SIZE));
+
+                return [
+                    'Svalberg',
+                    'LatLng: ' + svalbard.lat() + ' , ' + svalbard.lng(),
+                    'World Coordinate: ' + worldCoordinate.x + ' , ' +
+                    worldCoordinate.y,
+                    'Pixel Coordinate: ' + Math.floor(pixelCoordinate.x) + ' , ' +
+                    Math.floor(pixelCoordinate.y),
+                    'Tile Coordinate: ' + tileCoordinate.x + ' , ' +
+                    tileCoordinate.y + ' at Zoom Level: ' + map.getZoom()
+                ].join('<br>');
+            }
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 3,
+                    center: svalbard
+                };
+
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+
+                var coordInfoWindow = new google.maps.InfoWindow();
+                coordInfoWindow.setContent(createInfoWindowContent());
+                coordInfoWindow.setPosition(svalbard);
+                coordInfoWindow.open(map);
+
+                google.maps.event.addListener(map, 'zoom_changed', function() {
+                    coordInfoWindow.setContent(createInfoWindowContent());
+                    coordInfoWindow.open(map);
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+    </div>
 </div>
 
 </body>
